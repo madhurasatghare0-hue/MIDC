@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
+@import "leaflet/dist/leaflet.css";
+@import "tailwindcss";
+
+/* ============ DESIGN TOKENS ============ */
+@theme {
+  /* Fonts */
+  --font-display: "Poppins", "Mukta", system-ui, sans-serif;
+  --font-sans: "Mukta", system-ui, sans-serif;
+
+  /* Brand – terracotta / rust */
+  --color-brand-50:  #FDF4EE;
+  --color-brand-100: #FAE4D6;
+  --color-brand-200: #F4C7AD;
+  --color-brand-300: #E99E7A;
+  --color-brand-400: #D9714B;
+  --color-brand-500: #C2532F;
+  --color-brand-600: #A8432A;
+  --color-brand-700: #8A3622;
+  --color-brand-800: #6E2C1E;
+  --color-brand-900: #4F2016;
+
+  /* Backgrounds – ivory / cream */
+  --color-cream-50:  #FFFDF9;
+  --color-cream-100: #FBF6EF;
+  --color-cream-200: #F5EDE2;
+  --color-cream-300: #EADFD0;
+
+  /* Text – deep charcoal */
+  --color-ink-900: #231F1C;
+  --color-ink-700: #3F3833;
+  --color-ink-500: #6B625B;
+  --color-ink-400: #8E857D;
+  --color-ink-300: #B8AFA6;
+
+  /* Accents */
+  --color-gold-300: #F3CF7A;
+  --color-gold-400: #E8B04A;
+  --color-navy-800: #1C3150;
+  --color-navy-900: #14243B;
+
+  /* Status */
+  --color-status-received: #6B625B;
+  --color-status-assigned: #7C5CC4;
+  --color-status-progress: #2F6FD6;
+  --color-status-pending:  #E08A1E;
+  --color-status-resolved: #2E9E5B;
+  --color-status-overdue:  #D6453D;
+
+  /* Radius & shadows */
+  --radius-card: 1.25rem;
+  --shadow-card: 0 1px 2px rgb(60 30 15 / 0.04), 0 8px 24px -12px rgb(60 30 15 / 0.14);
+  --shadow-raised: 0 2px 6px rgb(60 30 15 / 0.06), 0 18px 40px -16px rgb(60 30 15 / 0.22);
+  --shadow-brand: 0 8px 20px -8px rgb(168 67 42 / 0.55);
+}
+
+/* ============ BASE ============ */
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream-100 text-ink-900 font-sans text-[15px] leading-relaxed;
+  }
+  h1, h2, h3, h4, h5 {
+    @apply font-display text-ink-900 tracking-tight;
+  }
+  ::selection {
+    @apply bg-brand-200 text-brand-900;
+  }
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-thumb { @apply bg-cream-300 rounded-full; }
+  ::-webkit-scrollbar-track { background: transparent; }
+}
